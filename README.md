@@ -23,9 +23,9 @@ Planned future features:
 ## Metal Materials Scene
 ![Alt text](images/metal_scene.png?raw=true "Metal Materials Scene")
 
-# Diffuse Material Scene
-![Alt text](images/diffuse_scene.png?raw=true "Diffuse Materials Scene")
-
 ## Dielectric Materials Scene
 ![Alt text](images/glass_scene_side.png?raw=true "Glass Materials Scene Side")
 ![Alt text](images/glass_scene_front.png?raw=true "Glass Materials Scene Front")
+
+## Diffuse Material Scene
+![Alt text](images/diffuse_scene.png?raw=true "Diffuse Materials Scene")
