@@ -88,9 +88,9 @@ HittableList metal_scene() {
     world.add(make_shared<Sphere>(Point3(1.25, 0.0, 0.0), 0.5, metal));
     world.add(make_shared<Sphere>(Point3(-1.25, 0.0, 0.0), 0.5, metal));
 
-    world.add(make_shared<Sphere>(Point3(0.0, 0.75, 0.5), 0.2, metal));
-    world.add(make_shared<Sphere>(Point3(-0.75, 0.75, 0.5), 0.2, metal));
-    world.add(make_shared<Sphere>(Point3(0.75, 0.75, 0.5), 0.2, metal));
+    world.add(make_shared<Sphere>(Point3(0.0, 1.25, 0.0), 0.5, metal));
+    world.add(make_shared<Sphere>(Point3(-1.25, 1.25, 0.0), 0.5, metal));
+    world.add(make_shared<Sphere>(Point3(1.25, 1.25, 0.0), 0.5, metal));
 
     return world;
 }
@@ -159,17 +159,17 @@ int main() {
     scene.add(make_shared<Sphere>(Point3(1.0, 0.0, -1.0), 0.5, material_right));
     */
 
-    HittableList scene = diffuse_scene();
+    HittableList scene = metal_scene();
 
     // Camera properties
     //Point3 look_from(4, 1, -0.6);
     //Point3 look_at(0, 0.0, -0.6);
-    Point3 look_from(0, 0, 2.5);
-    Point3 look_at(0, 0.0, 0);
+    Point3 look_from(0, 0.6, 2.5);
+    Point3 look_at(0, 0.6, 0);
     Vec3 view_up(0, 1, 0);
     double focus_dist = 10.0;
     double aperture = 0.0;
-    double vertical_fov_deg = 55.0;
+    double vertical_fov_deg = 60.0;
 
     Camera cam(look_from,look_at, view_up, vertical_fov_deg, aspect_ratio, aperture, focus_dist);
 
