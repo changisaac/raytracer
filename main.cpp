@@ -115,6 +115,23 @@ HittableList glass_scene() {
     return world;
 }
 
+HittableList diffuse_scene() {
+    HittableList world;
+
+    auto ground_material = make_shared<Lambertian>(Color(0.5, 0.5, 0.5));
+    world.add(make_shared<Sphere>(Point3(0,-1000.5,0), 1000, ground_material));
+
+    auto lambertian_1 = make_shared<Lambertian>(Color(1.0, 1.0, 1.0));
+    auto lambertian_2 = make_shared<Lambertian>(Color(0.0, 1.0, 0.0));
+    auto lambertian_3 = make_shared<Lambertian>(Color(1.0, 0.0, 0.0));
+
+    world.add(make_shared<Sphere>(Point3(0.0, 0.0, 0.0), 0.5, lambertian_1));
+    world.add(make_shared<Sphere>(Point3(1.1, 0.0, 0.0), 0.5, lambertian_2));
+    world.add(make_shared<Sphere>(Point3(-1.1, 0.0, 0.0), 0.5, lambertian_3));
+
+    return world;
+}
+
 int main() {
     // Image properties
     const double aspect_ratio = 16.0 / 9.0;
@@ -142,13 +159,13 @@ int main() {
     scene.add(make_shared<Sphere>(Point3(1.0, 0.0, -1.0), 0.5, material_right));
     */
 
-    HittableList scene = glass_scene();
+    HittableList scene = diffuse_scene();
 
     // Camera properties
-    Point3 look_from(4, 1, -0.6);
-    Point3 look_at(0, 0.0, -0.6);
-    //Point3 look_from(0, 0, 2.5);
-    //Point3 look_at(0, 0.0, 0);
+    //Point3 look_from(4, 1, -0.6);
+    //Point3 look_at(0, 0.0, -0.6);
+    Point3 look_from(0, 0, 2.5);
+    Point3 look_at(0, 0.0, 0);
     Vec3 view_up(0, 1, 0);
     double focus_dist = 10.0;
     double aperture = 0.0;
