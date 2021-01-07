@@ -19,3 +19,5 @@ Planned future features:
 - emmisive material (lights)
 - constant density mediums (fog, smoke, etc.)
 - shapes: rectangles
+
+![Alt text](images/metal_scene.png?raw=true "Metal Materials Scene")
