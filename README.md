@@ -29,3 +29,5 @@ Planned future features:
 
 ## Diffuse Materials Scene
 ![Alt text](images/diffuse_scene.png?raw=true "Diffuse Materials Scene")
+
+I am following Peter Shirley's Ray Tracing series to create the features in this ray tracer. I highly recommend taking look at her books if you interested in ray tracing! (https://github.com/RayTracing/raytracing.github.io) 
