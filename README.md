@@ -2,7 +2,6 @@
 
 This is an offline 3D graphics ray tracer implemented in C++11. No external graphics libraries were used, only standard C++ libraries. It is still a work in progress but so far includes the following features:
 
-- global illumination (recursive ray-trace)
 - antialiasing
 - diffuse lambertian material
 - specular metal material and imperfect metal (fuzzy metal)
