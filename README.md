@@ -27,5 +27,5 @@ Planned future features:
 ![Alt text](images/glass_scene_side.png?raw=true "Glass Materials Scene Side")
 ![Alt text](images/glass_scene_front.png?raw=true "Glass Materials Scene Front")
 
-## Diffuse Material Scene
+## Diffuse Materials Scene
 ![Alt text](images/diffuse_scene.png?raw=true "Diffuse Materials Scene")
