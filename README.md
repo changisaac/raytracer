@@ -20,4 +20,9 @@ Planned future features:
 - constant density mediums (fog, smoke, etc.)
 - shapes: rectangles
 
+## Metal Materials Scene
 ![Alt text](images/metal_scene.png?raw=true "Metal Materials Scene")
+
+## Glass Materials Scene
+![Alt text](images/glass_scene_side.png?raw=true "Glass Materials Scene Side")
+![Alt text](images/glass_scene_front.png?raw=true "Gass Materials Scene Front")

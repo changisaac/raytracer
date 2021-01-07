@@ -76,17 +76,13 @@ HittableList random_scene() {
     return world;
 }
 
-HittableList random_scene_2() {
+HittableList metal_scene() {
     HittableList world;
 
     auto ground_material = make_shared<Lambertian>(Color(0.5, 0.5, 0.5));
     world.add(make_shared<Sphere>(Point3(0,-1000.5,0), 1000, ground_material));
 
-    auto diffuse = make_shared<Lambertian>(Color(0.1, 0.2, 0.5));
-    auto glass = make_shared<Dielectric>(1.5);
     auto metal = make_shared<Metal>(Color(0.7, 0.6, 0.5), 0.0);
-    auto metal_1 = make_shared<Metal>(Color(0.7, 0.6, 0.5), 0.05);
-    auto metal_2 = make_shared<Metal>(Color(0.7, 0.6, 0.5), 0.1);
 
     world.add(make_shared<Sphere>(Point3(0.0, 0.0, 0.0), 0.5, metal));
     world.add(make_shared<Sphere>(Point3(1.25, 0.0, 0.0), 0.5, metal));
@@ -95,7 +91,26 @@ HittableList random_scene_2() {
     world.add(make_shared<Sphere>(Point3(0.0, 0.75, 0.5), 0.2, metal));
     world.add(make_shared<Sphere>(Point3(-0.75, 0.75, 0.5), 0.2, metal));
     world.add(make_shared<Sphere>(Point3(0.75, 0.75, 0.5), 0.2, metal));
-    //world.add(make_shared<Sphere>(Point3(-2.5, 0.0, 0.0), 0.5, material3));
+
+    return world;
+}
+
+HittableList glass_scene() {
+    HittableList world;
+
+    auto ground_material = make_shared<Lambertian>(Color(0.5, 0.5, 0.5));
+    world.add(make_shared<Sphere>(Point3(0,-1000.5,0), 1000, ground_material));
+
+    auto glass = make_shared<Dielectric>(1.5);
+    auto metal = make_shared<Metal>(Color(0.7, 0.6, 0.5), 0.0);
+
+    world.add(make_shared<Sphere>(Point3(0.0, 0.0, 0.0), 0.5, glass));
+    world.add(make_shared<Sphere>(Point3(1.25, 0.0, 0.0), 0.5, glass));
+    world.add(make_shared<Sphere>(Point3(-1.25, 0.0, 0.0), 0.5, glass));
+
+    world.add(make_shared<Sphere>(Point3(0.0, -0.3, -1.0), 0.2, metal));
+    world.add(make_shared<Sphere>(Point3(-1.25, -0.3, -1.0), 0.2, metal));
+    world.add(make_shared<Sphere>(Point3(1.25, -0.3, -1.0), 0.2, metal));
 
     return world;
 }
@@ -127,11 +142,13 @@ int main() {
     scene.add(make_shared<Sphere>(Point3(1.0, 0.0, -1.0), 0.5, material_right));
     */
 
-    HittableList scene = random_scene_2();
+    HittableList scene = glass_scene();
 
     // Camera properties
-    Point3 look_from(0, 0.0, 2.5);
-    Point3 look_at(0, 0.5, 0);
+    Point3 look_from(4, 1, -0.6);
+    Point3 look_at(0, 0.0, -0.6);
+    //Point3 look_from(0, 0, 2.5);
+    //Point3 look_at(0, 0.0, 0);
     Vec3 view_up(0, 1, 0);
     double focus_dist = 10.0;
     double aperture = 0.0;
